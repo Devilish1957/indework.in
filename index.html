@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>IndeWork | Business Support & Workforce Solutions</title>
+  <meta name="description" content="IndeWork provides reliable business support, customer service and workforce solutions for growing businesses.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #172033;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.96);
+      border-bottom: 1px solid #e8ebf0;
+    }
+
+    .nav-inner {
+      height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: #3157d5;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: #3157d5;
+    }
+
+    .nav-button {
+      background: #3157d5;
+      color: white;
+      padding: 11px 20px;
+      border-radius: 8px;
+    }
+
+    .nav-button:hover {
+      background: #2445b3;
+      color: white !important;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #f5f7ff 0%, #ffffff 60%);
+      padding: 105px 0 95px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #e9edff;
+      color: #3157d5;
+      padding: 7px 13px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 68px);
+      line-height: 1.08;
+      letter-spacing: -2.5px;
+      margin-bottom: 25px;
+    }
+
+    h1 span {
+      color: #3157d5;
+    }
+
+    .hero-text {
+      font-size: 19px;
+      color: #5e6878;
+      max-width: 650px;
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 9px;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+
+    .primary {
+      background: #3157d5;
+      color: white;
+    }
+
+    .primary:hover {
+      background: #2445b3;
+      transform: translateY(-2px);
+    }
+
+    .secondary {
+      border: 1px solid #d8dce5;
+      background: white;
+    }
+
+    .secondary:hover {
+      border-color: #3157d5;
+      color: #3157d5;
+    }
+
+    .hero-card {
+      background: #172033;
+      color: white;
+      border-radius: 22px;
+      padding: 42px;
+      box-shadow: 0 25px 60px rgba(23,32,51,0.15);
+    }
+
+    .hero-card h3 {
+      font-size: 27px;
+      margin-bottom: 18px;
+    }
+
+    .hero-card p {
+      color: #c9cfda;
+      margin-bottom: 25px;
+    }
+
+    .check {
+      margin: 13px 0;
+      color: #ffffff;
+    }
+
+    .check::before {
+      content: "✓";
+      color: #7fa0ff;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    /* GENERAL SECTIONS */
+    section {
+      padding: 90px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 50px;
+    }
+
+    .section-heading h2 {
+      font-size: 40px;
+      letter-spacing: -1px;
+      margin-bottom: 13px;
+    }
+
+    .section-heading p {
+      color: #687282;
+      font-size: 17px;
+    }
+
+    /* SERVICES */
+    .services {
+      background: #ffffff;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      border: 1px solid #e6e9ef;
+      border-radius: 15px;
+      padding: 32px;
+      background: white;
+      transition: 0.25s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(30,40,60,0.08);
+      border-color: #cbd4f5;
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #edf0ff;
+      color: #3157d5;
+      border-radius: 12px;
+      font-size: 21px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .service-card h3 {
+      margin-bottom: 10px;
+      font-size: 21px;
+    }
+
+    .service-card p {
+      color: #687282;
+    }
+
+    /* ABOUT */
+    .about {
+      background: #f7f8fb;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about h2 {
+      font-size: 42px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      color: #687282;
+      margin-bottom: 18px;
+      font-size: 17px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .stat {
+      background: white;
+      padding: 27px;
+      border-radius: 13px;
+      border: 1px solid #e5e8ee;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 30px;
+      color: #3157d5;
+    }
+
+    .stat span {
+      color: #697383;
+      font-size: 14px;
+    }
+
+    /* CTA */
+    .cta {
+      background: #3157d5;
+      color: white;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      max-width: 650px;
+      margin: 0 auto 28px;
+      color: #dce4ff;
+      font-size: 17px;
+    }
+
+    .cta .button {
+      background: white;
+      color: #3157d5;
+    }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .contact-card {
+      border: 1px solid #e4e7ed;
+      border-radius: 15px;
+      padding: 35px;
+    }
+
+    .contact-card h3 {
+      margin-bottom: 12px;
+    }
+
+    .contact-card p {
+      color: #687282;
+      margin-bottom: 10px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #111827;
+      color: white;
+      padding: 35px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    footer p {
+      color: #9ca5b4;
+      font-size: 14px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 800px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 75px 0;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 45px;
+      }
+
+      .hero-card {
+        padding: 30px;
+      }
+
+      .section-heading h2,
+      .about h2,
+      .cta h2 {
+        font-size: 34px;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="container nav-inner">
+      <a href="#" class="logo">Inde<span>Work</span></a>
+
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="nav-button">Work With Us</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-grid">
+
+      <div>
+        <div class="tag">BUSINESS SUPPORT & WORKFORCE SOLUTIONS</div>
+
+        <h1>
+          Reliable support for
+          <span>growing businesses.</span>
+        </h1>
+
+        <p class="hero-text">
+          IndeWork helps businesses improve customer experience,
+          streamline support operations and build dependable
+          workforce solutions.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#contact" class="button primary">Let's Work Together</a>
+          <a href="#services" class="button secondary">Explore Services</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>Built for businesses that want to grow.</h3>
+
+        <p>
+          Focus on your core business while we help handle
+          the support and operational work behind it.
+        </p>
+
+        <div class="check">Customer support</div>
+        <div class="check">Email & chat operations</div>
+        <div class="check">Back-office assistance</div>
+        <div class="check">Workforce solutions</div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>What We Do</h2>
+        <p>
+          Flexible business support designed around the needs
+          of modern companies and startups.
+        </p>
+      </div>
+
+      <div class="service-grid">
+
+        <div class="service-card">
+          <div class="icon">01</div>
+          <h3>Customer Support</h3>
+          <p>
+            Professional customer assistance through email,
+            chat and other digital support channels.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">02</div>
+          <h3>Email & Chat</h3>
+          <p>
+            Reliable communication support that helps businesses
+            respond quickly and maintain customer satisfaction.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">03</div>
+          <h3>Back-Office Support</h3>
+          <p>
+            Administrative and operational assistance that helps
+            your team stay focused on higher-value work.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">04</div>
+          <h3>Workforce Solutions</h3>
+          <p>
+            Flexible support resources for businesses that need
+            dependable operational capacity.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">05</div>
+          <h3>Startup Support</h3>
+          <p>
+            Practical support for startups building their
+            customer operations and service processes.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="icon">06</div>
+          <h3>Operations Assistance</h3>
+          <p>
+            Structured support to help businesses manage
+            recurring operational tasks efficiently.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container about-grid">
+
+      <div>
+        <div class="tag">ABOUT INDEWORK</div>
+
+        <h2>
+          Your business deserves
+          dependable support.
+        </h2>
+
+        <p>
+          We work with growing businesses that need reliable
+          operational and customer support without unnecessary
+          complexity.
+        </p>
+
+        <p>
+          Our approach is simple: understand the business,
+          understand the customer, and provide consistent
+          support that helps the business move forward.
+        </p>
+
+        <a href="#contact" class="button primary">Talk to Us</a>
+      </div>
+
+      <div class="stats">
+
+        <div class="stat">
+          <strong>24/7</strong>
+          <span>Flexible support capability</span>
+        </div>
+
+        <div class="stat">
+          <strong>1:1</strong>
+          <span>Client-focused approach</span>
+        </div>
+
+        <div class="stat">
+          <strong>Fast</strong>
+          <span>Responsive communication</span>
+        </div>
+
+        <div class="stat">
+          <strong>Flexible</strong>
+          <span>Solutions built around you</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+
+      <h2>Let's build something better.</h2>
+
+      <p>
+        Looking for reliable customer support or operational
+        assistance? Let's discuss what your business needs.
+      </p>
+
+      <a href="#contact" class="button">Start a Conversation</a>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>Let's Connect</h2>
+        <p>
+          Tell us what your business needs and we'll discuss
+          how IndeWork can help.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-card">
+          <h3>Business Inquiries</h3>
+          <p>
+            Interested in working with IndeWork?
+          </p>
+          <p>
+            Email: <strong>contact@indework.in</strong>
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <h3>Let's Talk</h3>
+          <p>
+            We are open to discussing customer support,
+            email/chat operations and other business
+            support requirements.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+
+      <div class="logo">Inde<span>Work</span></div>
+
+      <p>
+        © 2026 IndeWork. All rights reserved.
+      </p>
+
+    </div>
+  </footer>
+
+</body>
+</html>
